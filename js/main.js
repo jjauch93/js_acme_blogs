@@ -372,6 +372,8 @@ async function selectMenuChangeEventHandler()
   const posts = await getUserPosts(userId);
   // Assigns refreshPostsArray the function call refreshPosts with posts as it's parameter
   const refreshPostsArray = await refreshPosts(posts);
+   // Enables the element with selectMenu id in the document
+  document.querySelector("#selectMenu").disabled = false;
   // Returns array with userId, posts, and refreshPostsArray as it's elements
   return [userId, posts, refreshPostsArray];
 }
