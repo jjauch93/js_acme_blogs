@@ -360,8 +360,11 @@ async function refreshPosts(posts)
   return [removeButtons, main, fragment, addButtons];
 }
 
-async function selectMenuChangeEventHandler()
+async function selectMenuChangeEventHandler(event)
 {
+  // Checks if parameter was passed
+  if(!event)
+    return;
   // Disables the element with selectMenu id in the document
   document.querySelector("#selectMenu").disabled = true;
   // Assigns userId the value of the event target or 1 if there is no value of the event target
