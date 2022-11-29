@@ -260,10 +260,8 @@ async function displayComments(postId)
   const section = document.createElement('section');
   // Assigns section.dataset.postId the postId
   section.dataset.postId = postId;
-  // Creates a class in section labeled comments
-  section.classList.add('comments');
-  // Creates a class in section labeled hide
-  section.classList.add('hide');
+  // Creates a class in section labeled comments and another class labeled hide
+  section.classList.add("comments", "hide");
   // Assigns comments the function call getPostComments with postId as it's parameter
   const comments =  await getPostComments(postId);
   // Assigns fragment the function call createComments with comments as it's parameter
@@ -324,7 +322,7 @@ async function displayPosts(posts)
   const main = document.querySelector('main');
   // Assigns element the function call createPosts with posts as it's parameter if posts is defined.
   // Otherwise element is assigned the p element in the main element
-  const element = posts ? await createPosts(posts) : main.querySelector('p');
+  const element = posts ? await createPosts(posts) : createElemWithText("p", "Select an Employee to display their posts.", "default-text");
   // Appends element to main
   main.append(element);
   return element;
