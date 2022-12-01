@@ -39,7 +39,7 @@ function toggleCommentSection(postId)
     return;
   // Assigns toggleSection the section element with the postId equal to the postId parameter
   const toggleSection = document.querySelector(`section[data-post-id = '${postId}'`);
-  // Checks if section element with the postId parameter is found
+  // Checks if section element with the postId parameter was found
   if(toggleSection)
     //Toggles the hide class in toggleSection
     toggleSection.classList.toggle('hide');
@@ -53,12 +53,11 @@ function toggleCommentButton(postId)
     return;
   // Assigns buttonToggle the button element with the postId equal to the postId parameter
   const buttonToggle = document.querySelector(`button[data-post-id = '${postId}'`);;
-  // Returns null if button element with the postId parameter is not found
-  if(!buttonToggle)
-    return null;
-  // Assigns buttonToggle.textContent to Hide Comments if the text is Show Comments.
-  // Otherwise assigns text to Show Comments
-  buttonToggle.textContent = buttonToggle.textContent == "Show Comments" ? "Hide Comments" : "Show Comments";
+  // Checks if button element with the postId parameter was found
+  if(buttonToggle)
+    // Assigns buttonToggle.textContent to Hide Comments if the text is Show Comments.
+    // Otherwise assigns text to Show Comments
+    buttonToggle.textContent = buttonToggle.textContent == "Show Comments" ? "Hide Comments" : "Show Comments";
   return buttonToggle;
 }
 
